@@ -6,15 +6,20 @@
   </div>
 <% end %>
 
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <%= form_for :session, url: signin_path do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
 
-<%= form_for :session do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+      <%= f.submit "Sign In", class: 'btn btn-primary' %>
+    <% end %>
 
-  <%= f.submit "Sign In", class: 'btn btn-primary' %>
-<% end %>
+    <%= link_to "Log out", signout_path, method: :delete %>
+  </div>
+</div>
 
-<%= link_to "Log out", signout_path, method: :delete %>
+
 

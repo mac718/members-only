@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email])
     if @user && @user.authenticate(params[:session][:password])
       sign_in(@user)
-      redirect_to '/signin'
+      redirect_to '/posts'
     else
       flash.now[:danger] = "Nope, try again!"
       render :new
