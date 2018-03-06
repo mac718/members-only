@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def create
     @post = set_current_user.posts.build(post_params)
     if @post.save
-      redirect_to posts_index_path
+      redirect_to posts_path
     else
       flash.now[:danger] = "Invalid Post. Try again."
       render :post
